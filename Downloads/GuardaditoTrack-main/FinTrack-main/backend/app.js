@@ -20,7 +20,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 /* Middlewares */
-app.use(cors({ origin: 'https://fintrack-front.onrender.com', credentials: true })); // Configurar CORS para aceptar Cookies cruzadas desde el frontend 
+app.use(cors({ origin: 'https://firsttrack-front.onrender.com/', credentials: true })); // Configurar CORS para aceptar Cookies cruzadas desde el frontend 
 app.use(cookieParser()); // Manejador de Cookies 
 app.use(bodyParser.json());  // Manejador de JSON en las solicitudes
 
