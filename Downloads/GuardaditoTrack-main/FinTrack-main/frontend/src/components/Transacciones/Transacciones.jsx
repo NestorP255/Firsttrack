@@ -801,7 +801,7 @@ const Transacciones = () => {
 
         <div className="brine-header">
           <button
-            onClick={() => (window.location.href = "/home")}
+            onClick={() => window.history.back()}
             style={{
               zIndex: 9999,
               position: "relative",

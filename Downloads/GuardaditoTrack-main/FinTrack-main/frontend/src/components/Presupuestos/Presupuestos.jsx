@@ -1107,8 +1107,9 @@ const options = {
     <div className="presupuestos-tabla-container">
       <div>
         <div className="brine-header">
+          {/* <button onClick={() => window.history.back()}>&larr; Regresar</button> */}
           <button
-            onClick={() => (window.location.href = "/home")}
+            onClick={() => window.history.back()}
             style={{
               zIndex: 9999,
               position: "relative",
