@@ -35,7 +35,7 @@ const contentRef = useRef(null);
 
   // Simulación de usuario autenticado
   //const idUsuario = '1234567890abcdef'; // Reemplaza con el ID real desde contexto o localStorage
-  const API_URL = "http://localhost:3000/api/categorias";
+  const API_URL = "https://firsttrack-br2q.onrender.com/api/categorias";
   const idUsuario = localStorage.getItem("userId"); // IDuser automatica
 
   const fetchCategorias = async () => {

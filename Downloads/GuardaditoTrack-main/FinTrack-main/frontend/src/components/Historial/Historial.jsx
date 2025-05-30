@@ -86,9 +86,9 @@ const Historial = () => {
     const cargarReferencias = async () => {
       try {
         const [resDiv, resCat, resPres] = await Promise.all([
-          axios.get("http://localhost:3000/api/divisas"),
-          axios.get(`http://localhost:3000/api/categorias/${userId}`),
-          axios.get(`http://localhost:3000/api/presupuestos/${userId}`),
+          axios.get("https://firsttrack-br2q.onrender.com/api/divisas"),
+          axios.get(`https://firsttrack-br2q.onrender.com/api/categorias/${userId}`),
+          axios.get(`https://firsttrack-br2q.onrender.com/api/presupuestos/${userId}`),
         ]);
         setDivisas(
           Object.fromEntries(
@@ -133,8 +133,8 @@ const Historial = () => {
     try {
       const url =
         filtroTipo === "todos"
-          ? `http://localhost:3000/api/historial/${userId}`
-          : `http://localhost:3000/api/historial/${userId}?tipo=${filtroTipo}`;
+          ? `https://firsttrack-br2q.onrender.com/api/historial/${userId}`
+          : `https://firsttrack-br2q.onrender.com/api/historial/${userId}?tipo=${filtroTipo}`;
       const { data } = await axios.get(url);
       setHistorial(Array.isArray(data) ? data : []);
       setPaginaActual(1);

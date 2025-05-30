@@ -90,7 +90,7 @@ const ConfiguracionRapida = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:3000/api/usuarios/${usuario._id}/ConfiguracionRapida`, {
+      const response = await fetch(`https://firsttrack-br2q.onrender.com/api/usuarios/${usuario._id}/ConfiguracionRapida`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

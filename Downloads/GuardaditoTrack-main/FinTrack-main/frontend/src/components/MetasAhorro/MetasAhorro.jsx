@@ -189,7 +189,7 @@ const MetasAhorro = () => {
     try {
       if (!token) throw new Error("No token disponible, inicia sesión.");
       const response = await fetch(
-        `http://localhost:3000/api/metas-ahorro/${userId}`,
+        `https://firsttrack-br2q.onrender.com/api/metas-ahorro/${userId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -305,7 +305,7 @@ const MetasAhorro = () => {
       console.log("Datos a enviar:", dataParaEnviar); // Para debug
 
       await axios.post(
-        `http://localhost:3000/api/metas-ahorro/${userId}`,
+        `https://firsttrack-br2q.onrender.com/api/metas-ahorro/${userId}`,
         dataParaEnviar, // ← Usar dataParaEnviar en lugar de formData
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -366,7 +366,7 @@ const MetasAhorro = () => {
       console.log("Payload:", dataParaActualizar);
 
       await axios.patch(
-        `http://localhost:3000/api/metas-ahorro/${userId}/${formData._id}`,
+        `https://firsttrack-br2q.onrender.com/api/metas-ahorro/${userId}/${formData._id}`,
         dataParaActualizar,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -408,7 +408,7 @@ const MetasAhorro = () => {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("Token no encontrado. Inicie sesión.");
         await axios.delete(
-          `http://localhost:3000/api/metas-ahorro/${userId}/${metaAhorroSeleccionada._id}`,
+          `https://firsttrack-br2q.onrender.com/api/metas-ahorro/${userId}/${metaAhorroSeleccionada._id}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         fetchmetaAhorro();

@@ -36,7 +36,7 @@ const RegistroUsuario = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/api/usuarios", {
+      const response = await fetch("https://firsttrack-br2q.onrender.com/api/usuarios", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
