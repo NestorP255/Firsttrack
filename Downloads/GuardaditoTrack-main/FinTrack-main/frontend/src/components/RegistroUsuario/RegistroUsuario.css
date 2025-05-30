@@ -1,0 +1,187 @@
+/* Reset básico */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8;
+}
+
+/* Contenedor principal */
+.containerReg {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Panel izquierdo: Formulario */
+.left-panelReg {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Título y subtítulo */
+.left-panel-tituloReg {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.titulo-headerReg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.titulo-headerReg h1 {
+  font-size: 32px;
+  color: #2278b5;
+  margin: 0;
+}
+
+.left-panel-tituloReg p {
+  font-size: 16px;
+  color: #555555;
+  margin-top: 10px;
+}
+
+/* Botón de regreso */
+.botonReg-clase {
+  background-color: #2278b5;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.botonReg-clase:hover {
+  background-color: #1c639c;
+}
+
+/* Formulario */
+.formReg {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bienvenidoReg h2 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Grupos de entrada */
+.input-groupReg {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.input-groupReg input {
+  border: none;
+  outline: none;
+  flex: 1;
+  margin-left: 10px;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.iconReg {
+  color: #2278b5;
+  font-size: 18px;
+}
+
+/* Botón de registro */
+.Register-button {
+  background-color: #2278b5;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Register-button:hover {
+  background-color: #1c639c;
+}
+
+/* Texto de inicio de sesión */
+.ya-tienes-cuenta {
+  text-align: center;
+  font-size: 14px;
+  color: #555555;
+  margin-top: 20px;
+}
+
+.ya-tienes-cuenta a {
+  color: #2278b5;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.ya-tienes-cuenta a:hover {
+  text-decoration: underline;
+}
+
+/* Panel derecho: Imagen */
+.right-panelReg {
+  flex: 1;
+  background-color: #2278b5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.illustrationReg {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.illustrationReg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+  .containerReg {
+    flex-direction: column;
+  }
+
+  .left-panelReg, .right-panelReg {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .right-panelReg {
+    order: -1;
+  }
+
+  .illustrationReg {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
