@@ -41,7 +41,7 @@ const contentRef = useRef(null);
   const fetchCategorias = async () => {
     try {
       setCargando(true);
-      const res = await axios.get(`${API_URL}/${idUsuario}`);
+      const res = await axios.get(`${process.env.API_URL}/api/categorias/${idUsuario}`);
       setCategoriasGuardadas(res.data);
     } catch (err) {
       console.error("Error al obtener categorías:", err);
@@ -81,7 +81,7 @@ const contentRef = useRef(null);
 
       if (editandoId) {
         // Actualizar categoría existente
-        res = await axios.put(`${API_URL}/${idUsuario}/${editandoId}`, categoriaData);
+        res = await axios.put(`${process.env.API_URL}/api/categorias/${idUsuario}/${editandoId}`, categoriaData);
         setCategoriasGuardadas(
           categoriasGuardadas.map((cat) =>
             cat._id === editandoId ? res.data : cat
@@ -98,7 +98,7 @@ const contentRef = useRef(null);
 
       } else {
         // Crear nueva categoría
-        res = await axios.post(`${API_URL}/${idUsuario}/`, categoriaData);
+        res = await axios.post(`${process.env.API_URL}/api/categorias`, categoriaData);
         setCategoriasGuardadas([...categoriasGuardadas, res.data]);
 
         await Swal.fire({
@@ -154,7 +154,7 @@ const contentRef = useRef(null);
 
     try {
       setCargando(true);
-      await axios.delete(`${API_URL}/${idUsuario}/${id}`);
+      await axios.delete(`${process.env.API_URL}/api/categorias/${idUsuario}/${id}`);
       setCategoriasGuardadas(categoriasGuardadas.filter((cat) => cat._id !== id));
 
       await Swal.fire({

@@ -36,7 +36,7 @@ const RegistroUsuario = () => {
     };
 
     try {
-      const response = await fetch("https://firsttrack-br2q.onrender.com/api/usuarios", {
+      const response = await fetch(`${process.env.API_URL}/api/usuarios`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
