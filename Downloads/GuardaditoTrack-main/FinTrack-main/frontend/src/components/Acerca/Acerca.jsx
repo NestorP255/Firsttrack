@@ -8,7 +8,7 @@ const SobreNosotros = () => {
       {/* Header */}
       <header className="header">
         <div className="header-content">
-          <div className="header-left" onClick={() => (window.location.href = "/home")}>
+          <div className="header-left" onClick={() => window.history.back()}>
             <button className="back-button">
               <ArrowLeft className="back-icon" />
             </button>

@@ -9,7 +9,7 @@ const TerminosServicio = () => {
       <header className="header">
         <div className="header-content">
           <div className="header-left">
-            <button className="back-button" onClick={() => (window.location.href = "/home")}>
+            <button className="back-button" onClick={() => window.history.back()}>
               <ArrowLeft className="back-icon" />
             </button>
             <h1 className="page-title">Términos de Servicio</h1>

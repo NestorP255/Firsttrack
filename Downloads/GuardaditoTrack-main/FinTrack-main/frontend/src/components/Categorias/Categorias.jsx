@@ -97,7 +97,7 @@ const contentRef = useRef(null);
 
       } else {
         // Crear nueva categoría
-        res = await axios.post(`${process.env.REACT_APP_API_URL}/api/categorias`, categoriaData);
+        res = await axios.post(`${process.env.REACT_APP_API_URL}/api/categorias/${idUsuario}`, categoriaData);
         setCategoriasGuardadas([...categoriasGuardadas, res.data]);
 
         await Swal.fire({
