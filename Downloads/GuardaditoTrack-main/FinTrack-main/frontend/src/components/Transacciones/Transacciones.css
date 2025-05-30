@@ -378,7 +378,6 @@
   transition: border 0.3s ease, box-shadow 0.3s ease;
   min-width: 200px;
   appearance: none;
-  background-image: url('data:image/svg+xml;charset=UTF8,<svg fill="%23444" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 1rem;
