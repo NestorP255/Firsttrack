@@ -35,13 +35,12 @@ const contentRef = useRef(null);
 
   // Simulación de usuario autenticado
   //const idUsuario = '1234567890abcdef'; // Reemplaza con el ID real desde contexto o localStorage
-  const API_URL = "https://firsttrack-br2q.onrender.com/api/categorias";
   const idUsuario = localStorage.getItem("userId"); // IDuser automatica
 
   const fetchCategorias = async () => {
     try {
       setCargando(true);
-      const res = await axios.get(`${process.env.API_URL}/api/categorias/${idUsuario}`);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/categorias/${idUsuario}`);
       setCategoriasGuardadas(res.data);
     } catch (err) {
       console.error("Error al obtener categorías:", err);
@@ -81,7 +80,7 @@ const contentRef = useRef(null);
 
       if (editandoId) {
         // Actualizar categoría existente
-        res = await axios.put(`${process.env.API_URL}/api/categorias/${idUsuario}/${editandoId}`, categoriaData);
+        res = await axios.put(`${process.env.REACT_APP_API_URL}/api/categorias/${idUsuario}/${editandoId}`, categoriaData);
         setCategoriasGuardadas(
           categoriasGuardadas.map((cat) =>
             cat._id === editandoId ? res.data : cat
@@ -98,7 +97,7 @@ const contentRef = useRef(null);
 
       } else {
         // Crear nueva categoría
-        res = await axios.post(`${process.env.API_URL}/api/categorias`, categoriaData);
+        res = await axios.post(`${process.env.REACT_APP_API_URL}/api/categorias`, categoriaData);
         setCategoriasGuardadas([...categoriasGuardadas, res.data]);
 
         await Swal.fire({
@@ -154,7 +153,7 @@ const contentRef = useRef(null);
 
     try {
       setCargando(true);
-      await axios.delete(`${process.env.API_URL}/api/categorias/${idUsuario}/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/categorias/${idUsuario}/${id}`);
       setCategoriasGuardadas(categoriasGuardadas.filter((cat) => cat._id !== id));
 
       await Swal.fire({

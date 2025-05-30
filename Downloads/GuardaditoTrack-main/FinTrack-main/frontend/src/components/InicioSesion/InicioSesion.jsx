@@ -16,7 +16,7 @@ const InicioSesion = () => {
     e.preventDefault();
 
     try {
-      const respuesta = await fetch(`${process.env.API_URL}/api/usuarios/login`, {
+      const respuesta = await fetch(`${process.env.REACT_APP_API_URL}/api/usuarios/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, contraseña }),

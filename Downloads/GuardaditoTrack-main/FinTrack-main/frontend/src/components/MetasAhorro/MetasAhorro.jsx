@@ -305,7 +305,7 @@ const MetasAhorro = () => {
       console.log("Datos a enviar:", dataParaEnviar); // Para debug
 
       await axios.post(
-        `${process.env.API_URL}/api/metas-ahorro/${userId}`,
+        `${process.env.REACT_APP_API_URL}/api/metas-ahorro/${userId}`,
         dataParaEnviar, // ← Usar dataParaEnviar en lugar de formData
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -366,7 +366,7 @@ const MetasAhorro = () => {
       console.log("Payload:", dataParaActualizar);
 
       await axios.patch(
-        `${process.env.API_URL}/api/metas-ahorro/${userId}/${formData._id}`,
+        `${process.env.REACT_APP_API_URL}/api/metas-ahorro/${userId}/${formData._id}`,
         dataParaActualizar,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -408,7 +408,7 @@ const MetasAhorro = () => {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("Token no encontrado. Inicie sesión.");
         await axios.delete(
-          `${process.env.API_URL}/api/metas-ahorro/${userId}/${metaAhorroSeleccionada._id}`,
+          `${process.env.REACT_APP_API_URL}/api/metas-ahorro/${userId}/${metaAhorroSeleccionada._id}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         fetchmetaAhorro();

@@ -36,7 +36,7 @@ const RegistroUsuario = () => {
     };
 
     try {
-      const response = await fetch(`${process.env.API_URL}/api/usuarios`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/usuarios/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

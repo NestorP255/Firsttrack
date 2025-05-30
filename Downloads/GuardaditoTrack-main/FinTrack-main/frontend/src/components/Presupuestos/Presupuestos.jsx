@@ -466,7 +466,7 @@ const Presupuestos = () => {
     try {
       if (!token) throw new Error("No token disponible, inicia sesión.");
       const { data } = await axios.get(
-        `${process.env.API_URL}/api/presupuestos/${userId}`,
+        `${process.env.REACT_APP_API_URL}/api/presupuestos/${userId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setPresupuestos(data);
@@ -484,7 +484,7 @@ const Presupuestos = () => {
     const userId = localStorage.getItem("userId");
     try {
       const res = await axios.get(
-        `${process.env.API_URL}/api/presupuestos/${userId}`,
+        `${process.env.REACT_APP_API_URL}/api/presupuestos/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -528,7 +528,7 @@ const Presupuestos = () => {
         if (!token) throw new Error("No token disponible, inicia sesión.");
 
         const res = await axios.get(
-          `${process.env.API_URL}/api/categorias/${userId}`,
+          `${process.env.REACT_APP_API_URL}/api/categorias/${userId}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -674,7 +674,7 @@ const Presupuestos = () => {
       console.log("Datos preparados para POST:", cleanData);
 
       await axios.post(
-        `${process.env.API_URL}/api/presupuestos/${userId}`,
+        `${process.env.REACT_APP_API_URL}/api/presupuestos/${userId}`,
         cleanData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -757,7 +757,7 @@ const Presupuestos = () => {
       console.log("Datos preparados para PATCH:", dataLimpia);
 
       await axios.patch(
-        `${process.env.API_URL}/api/presupuestos/${userId}/${presupuestoSeleccionado._id}`,
+        `${process.env.REACT_APP_API_URL}/api/presupuestos/${userId}/${presupuestoSeleccionado._id}`,
         dataLimpia,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -799,7 +799,7 @@ const Presupuestos = () => {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("Token no encontrado. Inicie sesión.");
         await axios.delete(
-          `${process.env.API_URL}/api/presupuestos/${userId}/${presupuestoSeleccionado._id}`,
+          `${process.env.REACT_APP_API_URL}/api/presupuestos/${userId}/${presupuestoSeleccionado._id}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         await fetchPresupuestos();

@@ -380,7 +380,7 @@ const Transacciones = () => {
       if (!token) throw new Error("No token disponible, inicia sesión.");
 
       const res = await axios.get(
-        `${process.env.API_URL}/api/transacciones/${userId}`,
+        `${process.env.REACT_APP_API_URL}/api/transacciones/${userId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -398,7 +398,7 @@ const Transacciones = () => {
   const fetchCategorias = async (userId, token) => {
     try {
       const res = await axios.get(
-        `${process.env.API_URL}/api/categorias/${userId}`,
+        `${process.env.REACT_APP_API_URL}/api/categorias/${userId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setCategorias(res.data);
@@ -411,7 +411,7 @@ const Transacciones = () => {
   const fetchPresupuestos = async (userId, token) => {
     try {
       const res = await axios.get(
-        `${process.env.API_URL}/api/presupuestos/${userId}`,
+        `${process.env.REACT_APP_API_URL}/api/presupuestos/${userId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setPresupuestos(res.data);
@@ -426,7 +426,7 @@ const Transacciones = () => {
     
     try {
       const res = await axios.get(
-        `${process.env.API_URL}/api/metas-ahorro/${userId}`,
+        `${process.env.REACT_APP_API_URL}/api/metas-ahorro/${userId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setMeta_ahorro(res.data);
@@ -609,7 +609,7 @@ const Transacciones = () => {
       };
 
       await axios.post(
-        `${process.env.API_URL}/api/transacciones/${userId}`,
+        `${process.env.REACT_APP_API_URL}/api/transacciones/${userId}`,
         cleanData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -662,7 +662,7 @@ const Transacciones = () => {
         throw new Error("Sesión inválida. Por favor, inicia sesión.");
       const dataLimpia = limpiarDatos(formData);
       await axios.put(
-        `${process.env.API_URL}/api/transacciones/${userId}/${transaccionSeleccionada._id}`,
+        `${process.env.REACT_APP_API_URL}/api/transacciones/${userId}/${transaccionSeleccionada._id}`,
         dataLimpia,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -703,7 +703,7 @@ const Transacciones = () => {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("Token no encontrado. Inicie sesión.");
         await axios.delete(
-          `${process.env.API_URL}/api/transacciones/${userId}/${transaccionSeleccionada._id}`,
+          `${process.env.REACT_APP_API_URL}/api/transacciones/${userId}/${transaccionSeleccionada._id}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         const updatedUserId = localStorage.getItem("userId");
